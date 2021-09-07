@@ -1,0 +1,55 @@
+{
+  "name": "milkdown-plugin-shiki",
+  "version": "0.0.1",
+  "description": "milkdown-plugin-shiki",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
+    "prepare": "husky install",
+    "dev": "vite",
+    "tsc": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "keywords": [
+    "milkdown",
+    "milkdown plugin",
+    "shiki"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@milkdown/plugin-slash": "^4.11.1",
+    "@milkdown/preset-gfm": "^4.11.1",
+    "@milkdown/theme-nord": "^4.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "commitizen": "^4.2.4",
+    "commitlint-config-gitmoji": "^2.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "typescript": "^4.4.2",
+    "vite": "^2.5.3"
+  },
+  "dependencies": {
+    "@milkdown/core": "*",
+    "@milkdown/preset-commonmark": "^4.11.1",
+    "@types/refractor": "^3.0.0",
+    "refractor": "^3.3.1",
+    "shiki": "^0.9.10"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
