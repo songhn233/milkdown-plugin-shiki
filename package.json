@@ -25,6 +25,7 @@
     "@milkdown/plugin-slash": "^4.11.1",
     "@milkdown/preset-gfm": "^4.11.1",
     "@milkdown/theme-nord": "^4.11.1",
+    "@types/node": "^16.7.13",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
     "commitizen": "^4.2.4",

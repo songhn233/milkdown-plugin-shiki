@@ -21,6 +21,9 @@ There should be a line break before this.
 
 \`\`\`typescript
 console.log('Hello, milkdown!')
+function test() {
+  console.log('hello')
+}
 \`\`\`
 
 `

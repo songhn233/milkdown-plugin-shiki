@@ -2,25 +2,20 @@
 import { findChildren } from '@milkdown/utils'
 import { Node } from 'prosemirror-model'
 import { Decoration, DecorationSet } from 'prosemirror-view'
-import { setCDN, getHighlighter } from 'shiki'
+import type { Highlighter } from 'shiki'
 
 export type FlattedNode = {
   content: string
   color: string
 }
 
-export function getDecorations(doc: Node, name: string) {
+export function getDecorations(doc: Node, highlighter: Highlighter, name: string) {
   const decorations: Decoration[] = []
-
-  setCDN('https://unpkg.com/shiki/')
 
   findChildren((node) => node.type.name === name)(doc).forEach(async (block) => {
     let from = block.pos + 1
     const { language } = block.node.attrs
     if (!language) return
-    const highlighter = await getHighlighter({
-      theme: 'nord',
-    })
     const nodes = highlighter
       .codeToThemedTokens(block.node.textContent, language)
       .flat()
@@ -35,7 +30,7 @@ export function getDecorations(doc: Node, name: string) {
     nodes.forEach((node) => {
       const to = from + node.content.length
       const decoration = Decoration.inline(from, to, {
-        style: node.color,
+        style: `color: ${node.color}`,
       })
       decorations.push(decoration)
       from = to
