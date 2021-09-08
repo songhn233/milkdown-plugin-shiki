@@ -10,6 +10,7 @@ export async function Shiki() {
   setCDN('https://unpkg.com/shiki/')
   const highlighter = await getHighlighter({
     theme: 'min-dark',
+    langs: ['typescript', 'javascript'],
   })
   return new Plugin({
     key: new PluginKey(key),
