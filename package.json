@@ -1,10 +1,10 @@
 {
-  "name": "milkdown-plugin-shiki",
-  "version": "0.0.1",
+  "name": "@milkdown/plugin-shiki",
+  "version": "0.1.0",
   "description": "milkdown-plugin-shiki",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "prepare": "husky install",
@@ -17,7 +17,7 @@
     "milkdown plugin",
     "shiki"
   ],
-  "author": "",
+  "author": "songhn",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
