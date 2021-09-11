@@ -2,15 +2,44 @@ import { findChildren } from '@milkdown/utils'
 import { Plugin, PluginKey } from 'prosemirror-state'
 import { getDecorations } from './decorations'
 import { setCDN, getHighlighter } from 'shiki'
+import type { IThemeRegistration, Lang } from 'shiki'
 
 export const key = 'MILKDOWN_PLUGIN_SHIKI'
 
-export async function Shiki() {
+export interface ShikiOption {
+  cdn?: string
+  otherLangs?: Lang[]
+  theme?: IThemeRegistration
+}
+
+export const defaultLangs = [
+  'javascript',
+  'typescript',
+  'bash',
+  'sql',
+  'json',
+  'html',
+  'css',
+  'c',
+  'cpp',
+  'java',
+  'ruby',
+  'python',
+  'go',
+  'rust',
+  'markdown',
+] as Lang[]
+
+export async function Shiki({
+  theme = 'min-dark',
+  otherLangs = [],
+  cdn = 'https://unpkg.com/shiki/',
+}: ShikiOption = {}) {
   const NAME = 'fence'
-  setCDN('https://unpkg.com/shiki/')
+  setCDN(cdn)
   const highlighter = await getHighlighter({
-    theme: 'min-dark',
-    langs: ['typescript', 'javascript'],
+    theme,
+    langs: defaultLangs.concat(otherLangs),
   })
   return new Plugin({
     key: new PluginKey(key),

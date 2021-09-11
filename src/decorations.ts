@@ -16,24 +16,25 @@ export function getDecorations(doc: Node, highlighter: Highlighter, name: string
     let from = block.pos + 1
     const { language } = block.node.attrs
     if (!language) return
-    const nodes = highlighter
-      .codeToThemedTokens(block.node.textContent, language)
-      .flat()
-      .map(
+    const nodes = highlighter.codeToThemedTokens(block.node.textContent, language).map((token) =>
+      token.map(
         ({ content, color }) =>
           ({
             content,
             color,
           } as FlattedNode),
-      )
-    console.log(nodes)
-    nodes.forEach((node) => {
-      const to = from + node.content.length
-      const decoration = Decoration.inline(from, to, {
-        style: `color: ${node.color}`,
+      ),
+    )
+    nodes.forEach((block) => {
+      block.forEach((node) => {
+        const to = from + node.content.length
+        const decoration = Decoration.inline(from, to, {
+          style: `color: ${node.color}`,
+        })
+        decorations.push(decoration)
+        from = to
       })
-      decorations.push(decoration)
-      from = to
+      from += 1
     })
   })
   return DecorationSet.create(doc, decorations)
