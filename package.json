@@ -1,6 +1,6 @@
 {
   "name": "milkdown-plugin-shiki",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "milkdown-plugin-shiki",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -12,6 +12,14 @@
     "tsc": "tsc --noEmit",
     "build": "tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songhn233/milkdown-plugin-shiki"
+  },
+  "bugs": {
+    "url": "https://github.com/songhn233/milkdown-plugin-shiki/issues"
+  },
+  "homepage": "https://github.com/songhn233/milkdown-plugin-shiki",
   "keywords": [
     "milkdown",
     "milkdown plugin",

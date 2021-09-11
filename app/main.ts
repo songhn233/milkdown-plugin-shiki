@@ -3,7 +3,6 @@ import { marks, nodes } from '@milkdown/preset-commonmark'
 import { nord } from '@milkdown/theme-nord'
 import { slash } from '@milkdown/plugin-slash'
 import { shiki } from '../src/index'
-import 'prismjs/themes/prism.css'
 
 import './style.css'
 
