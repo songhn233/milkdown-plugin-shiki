@@ -10,7 +10,7 @@ import { Editor } from '@milkdown/core';
 import { commonmark } from '@milkdown/preset-commonmark';
 import { nord } from '@milkdown/theme-nord';
 
-import { shiki } from '@milkdown/plugin-shiki';
+import { shiki } from 'milkdown-plugin-shiki';
 
 Editor.make()
   .use(nord)

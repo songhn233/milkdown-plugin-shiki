@@ -1,5 +1,5 @@
 {
-  "name": "@milkdown/plugin-shiki",
+  "name": "milkdown-plugin-shiki",
   "version": "0.1.0",
   "description": "milkdown-plugin-shiki",
   "main": "lib/index.js",
